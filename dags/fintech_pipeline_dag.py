@@ -27,3 +27,4 @@ with DAG('fintech_risk_pipeline', schedule_interval='@daily', start_date=datetim
         task_id='dbt_test',
         bash_command='dbt test'
     )
+        run_mdm_spark_job >> run_dbt_models >> test_dbt_models
